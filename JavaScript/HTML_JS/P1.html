@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <script>
+            function show() {
+                var date = new Date();
+                frmLeave.appliedOn.value = date.toISOString().substring(0, 10);
+            }
+
+            function tat() {
+                var startDate = Date.parse(frmLeave.leaveStartDate.value);
+                var endDate = Date.parse(frmLeave.leaveEndDate.value);
+                var ms = endDate - new Date().getTime();
+                var days = (ms / (1000 * 60 * 60 * 24));
+                days++;
+                if (days <= 0) {
+                    document.getElementById("errLeaveEndDate").innerHTML = 
+            "Leave End Date Cannot be yesterday's Date...".fontcolor("red");
+                    return;
+                } else {
+                    document.getElementById("errLeaveEndDate").innerHTML = "";
+                }
+                ms = endDate - startDate;
+                days = (ms / (1000 * 60 * 60 * 24));
+                days++;
+                if (days <= 0) {
+                    document.getElementById("errLeaveEndDate").innerHTML = 
+            "Leave Start Date Cannot be Greater than Leave End Date...".fontcolor("red");
+                    return;
+                } else {
+                    document.getElementById("errLeaveEndDate").innerHTML = "";
+                }
+                frmLeave.noOfDays.value = days;
+            }
+            function doValid() {
+                var startDate = Date.parse(frmLeave.leaveStartDate.value);
+                var ms = startDate - new Date().getTime();
+                var days = (ms / (1000 * 60 * 60 * 24));
+                days++;
+                if (days <= 0) {
+                    document.getElementById("errLeaveStartDate").innerHTML = 
+                    "Leave Start Date Cannot be Yesterday's Date...".fontcolor("red");
+                    return;                    
+                } else {
+                    document.getElementById("errLeaveStartDate").innerHTML = "";
+                }
+            }
+        </script>
+    </head>
+<body onload="show()">
+    <form name="frmLeave">
+        <table border="3" align="center">
+            <tr>
+                <th colspan="2">
+                    Leave Application Form
+                </th>
+            </tr>
+            <tr>
+                <th>Employ Name</th>
+                <td>
+                    <select name="employName">
+                        <option value="Bhavana">Bhavana</option>
+                        <option value="Ammar">Ammar</option>
+                        <option value="Aishwarya">Aishwarya</option>
+                        <option value="Nagaraju">Nagaraju</option>
+                        <option value="Mahendra">Mahendra</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Manager Name</th>
+                <td>
+                    <select name="managerName">
+                        <option value="Neha">Neha</option>
+                        <option value="Lata">Lata</option>
+                        <option value="Siddharthi">Siddharthi</option>
+                        <option value="Rajlakshmi">Rajlakshmi</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Start Date</th>
+                <td><input type="date" name="leaveStartDate" 
+                        onblur="doValid()" />
+                    <span id="errLeaveStartDate"></span>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave End Date</th>
+                <td>
+                    <input type="date" name="leaveEndDate" onblur="tat()" /> 
+                    <span id="errLeaveEndDate"></span>
+
+                </td>
+            </tr>
+            <tr>
+                <th>No.Of Days</th>
+                <td>
+                    <input type="number" name="noOfDays" readonly />
+                </td>
+            </tr>
+            <tr>
+                <th>Applied On</th>
+                <td>
+                    <input type="text" name="appliedOn" />
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Type</th>
+                <td>
+                    <select name="leaveType">
+                        <option value="EL">EL</option>
+                        <option value="PL">PL</option>
+                        <option value="ML">ML</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Leave Reason</th>
+                <td>
+                    <input type="text" name="leaveReason" />
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="button" value="Apply Leave" onclick="final()" />
+                </th>
+            </tr>
+        </table>
+    </form>
+    <span id="result"></span>
+</body>
+</html>
