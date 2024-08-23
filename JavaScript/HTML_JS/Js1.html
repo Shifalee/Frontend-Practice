@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            var students = [
+                "Ganesh", "Akshay","Anitha",
+                "Hrutik","Guru","Lahari"
+            ];
+        </script>
+    </head>
+<body>
+    Employ Name : 
+    <select name="employ">
+        <option value="Select Employ">Select Employ</option>
+        <script>
+            for(var v in students) {
+                document.writeln("<option value='"+students[v] + "'>" +students[v] + "</option>");
+            }
+        </script>
+    </select>
+</body>
+</html>
