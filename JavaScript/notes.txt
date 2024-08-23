@@ -1,0 +1,115 @@
+Grid System : 
+
+Now a days we need to make responsive pages for users.  Which allows you to appear same irrespective of device.
+
+To make this first we need the help of grid system. 
+
+How to make a grid 
+
+display : grid then it becomes grid. 
+
+You can specify columns and rows by using auto property. 
+
+CSS grid system allows you to take another measure unit know as fr which in short form as fraction. 
+fr unit as a unit which represents a fraction of the avaialbe space in the grid container. 
+
+You can make grid in 4 ways as
+
+grid : auto auto / auto auto auto auto;
+
+grid-template-columns : auto auto;
+grid-tempalte-rows : auto auto auto auto;
+
+grid-template-columns : 1fr 1fr 2fr;
+
+grid-template-columns : repeat(auto_fill,minmax(180px, 1fr));
+
+Flex : In CSS we can control the sizing, alignment and positioning of elements within a container regardless of the forder in which they are in the HTML document.  For this we need the help of flex containers and flex items as its two main parts. 
+
+Flex containers are created by changing an element's display peroperties to flex. The container used as the parent element for the flex items and transforms into a flexible box or flex container.  A flex containers direct child elements are transformed into flex items. 
+
+Major properties of flex are : 
+_______________________________
+
+-> flex-direction
+
+-> justify-content
+
+-> Align-items
+
+-> Flex-wrap
+
+-> Align-content
+
+_________________________________________________________________________________________________________
+
+Media Queries allows you to create any tailored design to the given html page. We can use media queries to apply different styles for different devices.  With the help of media query, we can also check the device's height, width, resolution, and orientation etc...
+
+The main aim of the CSS rules is to make the web page more responsive to deliver the optimized design for the different devices. 
+
+For this we need the help of media queries. 
+
+@media not|only media type and (media feature and|or|not media feature)
+{
+   // css property
+}
+
+What are the various media types 
+
+ALL 
+
+PRINT
+
+Screen
+
+Speeach
+
+
+div  -> Used to divide the page into multiple partitions
+
+span -> Used to represent inline text like notification messages and error messages etc...
+
+p -> used for headings and any static content
+
+________________________________________________________________________________________________________________
+
+HTML will not perform,
+
+	writing business logic
+
+	custom validations
+
+	event-based programming
+
+To implement all those, we need the help of javascript. 
+
+JavaScript is a scripting language, that which allows you to perform dynamic operations on the given page. 
+
+To start with javascript, using 
+
+<script>
+</script> : By default script tag takes javascript as default language. 
+
+You can define code in javascript by using functions.
+
+as 
+
+function function_name() {
+...
+...
+...
+}
+
+in javascript, we have predefined events as 
+
+onload() -> This event fires automatically once the page gets loaded. 
+
+onclick() -> This event fires automatically once you click on the button.
+
+onchange() -> This event fires automatically once you change checkbox/dropdown
+
+alert() : Used to display any value or message 
+
+In javascript, we can define variables by using var keyword. 
+
+
