@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script>
+            let msg = "Welcome to Javascript Programming... Trainer Prasanna... Thank you";
+            var res = "";
+            show = () => {
+                const words = msg.split(" ");
+                words.forEach(x => {
+                    console.log(x);
+                    alert(x);
+                    res+=x + "\n";
+                })
+            document.getElementById("result").innerHTML = res;
+            }
+        </script>
+    </head>
+<body onload="show()">
+    <span id="result"></span>
+</body>
+</html>
